@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "superagent-proxy": "^3.0.0"
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>el与data的两种写法</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+  <!-- 准备好一个容器 -->
+  <div id="root">
+    <h1>你好,{{name}}</h1>
+  </div>
+</body>
+
+<script type="text/javascript">
+  // const v = new Vue({
+  // el: '#root',//第一种写法
+  //data的第一种写法
+  // data: {
+  //   name: '尚硅谷'
+  // }
+  // })
+  // console.log(v)
+  // setTimeout(() => {
+  //   v.$mount('#root')//第二种写法
+  // }, 1000);
+
+
+  new Vue({
+    el: '#root',
+    //data的第二种写法 函数式
+    data () {    //不能写成箭头函数（箭头函数自身没有this，只能向外找，找到window）
+      console.log('@@@', this)//此处的this是Vue实例对象
+      return {
+        name: '尚硅谷'
+      }
+    }
+  })
+</script>
+
+</html>
